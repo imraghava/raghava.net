@@ -7,7 +7,6 @@ import Blogs from './components/Blogs';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
 import Menu from './components/Menu';
-import videoBackground from '../public/assets/background.mp4';
 import Footer from './components/Footer';
 
 const App = () => {
@@ -37,10 +36,10 @@ const App = () => {
       <Nav menuOpen={menuOpen} toggleMenu={toggleMenu} />
 
       <main className={`mt-[64px] relative ${menuOpen && 'opacity-80'}`} style={sectionStyle}>
-        <video autoPlay loop muted playsInline style={videoStyle}>
-          <source src={videoBackground} type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
+       <video autoPlay loop muted playsInline style={videoStyle}>
+  <source src="/assets/background.mp4" type="video/mp4" />
+  Your browser does not support the video tag.
+</video>
         <Home />
         <About />
         <Skills />
