@@ -38,7 +38,7 @@ const App = () => {
 
       <main className={`mt-[64px] relative ${menuOpen && 'opacity-80'}`} style={sectionStyle}>
        <video autoPlay loop muted playsInline style={videoStyle}>
-  <source src="/assets/background.mp4" type="video/mp4" />
+  <source src={backgroundVideo} type="video/mp4" />
   Your browser does not support the video tag.
 </video>
         <Home />
