@@ -6,6 +6,7 @@ import Skills from './components/Skills';
 import Blogs from './components/Blogs';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
+import backgroundVideo from "./assets/background.mp4";
 import Menu from './components/Menu';
 import Footer from './components/Footer';
 
