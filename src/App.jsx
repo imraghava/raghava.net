@@ -6,48 +6,26 @@ import Skills from './components/Skills';
 import Blogs from './components/Blogs';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
-import backgroundVideo from "./assets/background.mp4";
 import Menu from './components/Menu';
 import Footer from './components/Footer';
 
 const App = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
-  };
-
-  const sectionStyle = {
-    position: 'relative',
-    overflow: 'hidden',
-  };
-
-  const videoStyle = {
-    width: '100%',
-    height: '100%',
-    objectFit: 'cover',
-    position: 'fixed',
-    top: 0,
-    left: 0,
-    zIndex: -1,
-  };
+  const toggleMenu = () => setMenuOpen((open) => !open);
 
   return (
-    <div className="font-montserrat">
+    <div className="relative min-h-screen overflow-x-clip">
       <Nav menuOpen={menuOpen} toggleMenu={toggleMenu} />
 
-      <main className={`mt-[64px] relative ${menuOpen && 'opacity-80'}`} style={sectionStyle}>
-       <video autoPlay loop muted playsInline style={videoStyle}>
-  <source src={backgroundVideo} type="video/mp4" />
-  Your browser does not support the video tag.
-</video>
+      <main>
         <Home />
         <About />
         <Skills />
         <Projects />
         <Blogs />
         <Contact />
-        <Footer/>
+        <Footer />
       </main>
 
       <Menu menuOpen={menuOpen} setMenuOpen={setMenuOpen} toggleMenu={toggleMenu} />

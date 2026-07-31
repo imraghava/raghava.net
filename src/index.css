@@ -1,3 +1,83 @@
 @tailwind base;
 @tailwind components;
-@tailwind utilities;  
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+
+    /* Single source of truth for the accent ramp — retune the brand here. */
+    --iris: 124 92 255;
+    --aqua: 34 211 238;
+    --blush: 244 114 182;
+
+    --hairline: rgba(255, 255, 255, 0.07);
+    --hairline-strong: rgba(255, 255, 255, 0.14);
+
+    --nav-h: 68px;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-void text-ink font-sans antialiased;
+    /* Fixed page-wide wash so sections never need opaque fills of their own. */
+    background-image:
+      radial-gradient(900px 600px at 12% -5%, rgba(var(--iris) / 0.13), transparent 60%),
+      radial-gradient(800px 620px at 88% 8%, rgba(var(--aqua) / 0.09), transparent 62%);
+    background-attachment: fixed;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Anchored sections must clear the fixed nav. */
+  section[id] {
+    scroll-margin-top: calc(var(--nav-h) + 12px);
+  }
+
+  ::selection {
+    background: rgba(var(--iris) / 0.35);
+    color: #fff;
+  }
+
+  :focus-visible {
+    outline: 2px solid rgba(var(--aqua) / 0.85);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #07070b;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, rgba(var(--iris) / 0.55), rgba(var(--aqua) / 0.45));
+    border-radius: 999px;
+    border: 2px solid #07070b;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, rgba(var(--iris) / 0.85), rgba(var(--aqua) / 0.7));
+  }
+}
+
+/* Anyone who asked the OS for less motion gets a static page. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
