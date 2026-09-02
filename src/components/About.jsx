@@ -18,7 +18,7 @@ const About = () => {
         <div>
           <h2 className="text-[26px] font-archivo font-bold mb-6 border-b-2 border-white pb-6">TRANSFORMING IDEAS INTO INTELLIGENT ENTERPRISE SOLUTIONS</h2>
           <div className="text-lg font-medium flex flex-col gap-4 text-left md:text-center">
-            <p>I am Raghava Mahankali, an AI Engineer, Lead Full Stack .NET Developer, Azure Solution Architect, researcher, and technical blogger with over 12 years of experience designing enterprise-scale software for government agencies and Fortune 500 organizations.</p>
+            <p>I am Raghava, an AI Engineer, Lead Full Stack .NET Developer, Azure Solution Architect, researcher, and technical blogger with over 12 years of experience designing enterprise-scale software for government agencies and Fortune 500 organizations.</p>
             <p>My expertise includes Artificial Intelligence, Large Language Models (LLMs), Retrieval-Augmented Generation (RAG), Azure OpenAI, Semantic Kernel, cloud-native architecture, distributed systems, enterprise software engineering, and modern full-stack application development.</p>
             <p>I have architected production-grade AI systems, modernized legacy enterprise applications, built cloud-native platforms on Microsoft Azure, and led engineering teams delivering secure, scalable, and intelligent software solutions.</p>
             <p>Currently, I focus on Enterprise AI, Agentic AI, Intelligent Document Processing, AI Automation, Cloud Architecture, and Large Scale .NET Applications.</p>
